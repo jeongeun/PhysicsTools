@@ -1,0 +1,116 @@
+DEBUG 2025-02-23 16:32:32.981 UTC: 	 CRAB Client version: v3.241125
+DEBUG 2025-02-23 16:32:32.982 UTC: 	 Running on: Linux lxplus814.cern.ch 4.18.0-553.40.1.el8_10.x86_64 #1 SMP Thu Feb 6 21:20:51 EST 2025 x86_64 x86_64 x86_64 GNU/Linux
+DEBUG 2025-02-23 16:32:32.982 UTC: 	 Not using Singularity
+DEBUG 2025-02-23 16:32:32.982 UTC: 	 Operating System: Red Hat Enterprise Linux 8.10 (Ootpa)
+DEBUG 2025-02-23 16:32:32.982 UTC: 	 Executing command: 'remake'
+DEBUG 2025-02-23 16:32:32.982 UTC: 	 Found CRAB cache file /afs/cern.ch/user/j/jelee/.crab3
+DEBUG 2025-02-23 16:32:32.982 UTC: 	 Checking credentials
+DEBUG 2025-02-23 16:32:32.982 UTC: 	 Found proxy file /tmp/x509up_u21686
+DEBUG 2025-02-23 16:32:32.982 UTC: 	 Making sure it has proper VOMS extension
+DEBUG 2025-02-23 16:32:32.982 UTC: 	 Executing command :
+ voms-proxy-info --vo --file /tmp/x509up_u21686
+DEBUG 2025-02-23 16:32:33.373 UTC: 	 output : cms
+
+ error: 
+ retcode : 0
+DEBUG 2025-02-23 16:32:33.373 UTC: 	 Getting proxy life time left
+DEBUG 2025-02-23 16:32:33.373 UTC: 	 Executing command :
+ voms-proxy-info --actimeleft --timeleft --file /tmp/x509up_u21686
+DEBUG 2025-02-23 16:32:33.777 UTC: 	 output : 349405
+349405
+
+ error: 
+ retcode : 0
+DEBUG 2025-02-23 16:32:33.777 UTC: 	 Proxy valid for 97:03:25 hours
+DEBUG 2025-02-23 16:32:33.777 UTC: 	 Encoded data for curl request: subresource=delegatedn
+DEBUG 2025-02-23 16:32:33.810 UTC: 	 Registering user credentials on myproxy for /DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod)-tw(01|02).cern.ch|/DC=ch/DC=cern/OU=computers/CN=crab-dev-tw(01|02|03|04).cern.ch|/DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=cmscrab/CN=(817881|373708)/CN=Robot: cms crab|/DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=crabint1/CN=373708/CN=Robot: CMS CRAB Integration 1
+DEBUG 2025-02-23 16:32:33.810 UTC: 	 Executing command :
+ voms-proxy-info --identity --file /tmp/x509up_u21686
+DEBUG 2025-02-23 16:32:34.165 UTC: 	 output : /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=jelee/CN=727784/CN=Jeongeun Lee
+
+ error: 
+ retcode : 0
+DEBUG 2025-02-23 16:32:34.165 UTC: 	 Getting myproxy life time left for f1f3941e9d4a8be26269c6d003b41f2827f63184
+DEBUG 2025-02-23 16:32:34.165 UTC: 	 Executing command :
+ myproxy-info -s myproxy.cern.ch -l f1f3941e9d4a8be26269c6d003b41f2827f63184
+DEBUG 2025-02-23 16:32:34.591 UTC: 	 output : username: f1f3941e9d4a8be26269c6d003b41f2827f63184
+owner: /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=jelee/CN=727784/CN=Jeongeun Lee
+  renewal policy: /DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod)-tw(01|02).cern.ch|/DC=ch/DC=cern/OU=computers/CN=crab-dev-tw(01|02|03|04).cern.ch|/DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=cmscrab/CN=(817881|373708)/CN=Robot: cms crab|/DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=crabint1/CN=373708/CN=Robot: CMS CRAB Integration 1
+  trusted retrieval policy: /DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod)-tw(01|02).cern.ch|/DC=ch/DC=cern/OU=computers/CN=crab-dev-tw(01|02|03|04).cern.ch|/DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=cmscrab/CN=(817881|373708)/CN=Robot: cms crab|/DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=crabint1/CN=373708/CN=Robot: CMS CRAB Integration 1
+  timeleft: 645:35:06  (26.9 days)
+
+ error: 
+ retcode : 0
+DEBUG 2025-02-23 16:32:34.591 UTC: 	 Myproxy is valid: 2324100
+DEBUG 2025-02-23 16:32:34.591 UTC: 	 Result of myproxy credential check:
+  Credential exists on myproxy: username: f1f3941e9d4a8be26269c6d003b41f2827f63184  - validity: 26 days, 21:35:00
+DEBUG 2025-02-23 16:32:34.592 UTC: 	 Command use: remake
+DEBUG 2025-02-23 16:32:34.592 UTC: 	 Options use: ['--task=250222_164810:jelee_crab_QCD_PT-170to300']
+DEBUG 2025-02-23 16:32:34.592 UTC: 	 Encoded data for curl request: subresource=version
+DEBUG 2025-02-23 16:32:34.623 UTC: 	 CRABClient version: v3.241125
+DEBUG 2025-02-23 16:32:34.623 UTC: 	 Instance is prod
+DEBUG 2025-02-23 16:32:34.623 UTC: 	 Server base url is cmsweb.cern.ch
+DEBUG 2025-02-23 16:32:34.623 UTC: 	 Command api workflow
+WARNING 2025-02-23 16:32:34.623 UTC: 	 ATTENTION return value for 'remake' has been changed to a dictionary
+ format is {'commandStatus': 'SUCCESS' or 'FAILED',
+            'workDir': name of the work directory created}
+INFO 2025-02-23 16:32:34.623 UTC: 	 Warning: crab_QCD_PT-170to300/.requestcache not created, because it already exists.
+INFO 2025-02-23 16:32:34.625 UTC: 	 Log file is /afs/cern.ch/work/j/jelee/nanoaod/workspace2025/CMSSW_13_3_0/src/PhysicsTools/NanoAODTools/crab_Run2_UL_Skim/2022preEE/QCD_PT-170to300/crab.log
+DEBUG 2025-02-23 19:36:13.996 UTC: 	 CRAB Client version: v3.241125
+DEBUG 2025-02-23 19:36:13.996 UTC: 	 Running on: Linux lxplus814.cern.ch 4.18.0-553.40.1.el8_10.x86_64 #1 SMP Thu Feb 6 21:20:51 EST 2025 x86_64 x86_64 x86_64 GNU/Linux
+DEBUG 2025-02-23 19:36:13.996 UTC: 	 Not using Singularity
+DEBUG 2025-02-23 19:36:13.996 UTC: 	 Operating System: Red Hat Enterprise Linux 8.10 (Ootpa)
+DEBUG 2025-02-23 19:36:13.996 UTC: 	 Executing command: 'remake'
+DEBUG 2025-02-23 19:36:14.116 UTC: 	 Found CRAB cache file /afs/cern.ch/user/j/jelee/.crab3
+DEBUG 2025-02-23 19:36:14.116 UTC: 	 Checking credentials
+DEBUG 2025-02-23 19:36:14.116 UTC: 	 Found proxy file /tmp/x509up_u21686
+DEBUG 2025-02-23 19:36:14.116 UTC: 	 Making sure it has proper VOMS extension
+DEBUG 2025-02-23 19:36:14.116 UTC: 	 Executing command :
+ voms-proxy-info --vo --file /tmp/x509up_u21686
+DEBUG 2025-02-23 19:36:14.522 UTC: 	 output : cms
+
+ error: 
+ retcode : 0
+DEBUG 2025-02-23 19:36:14.522 UTC: 	 Getting proxy life time left
+DEBUG 2025-02-23 19:36:14.522 UTC: 	 Executing command :
+ voms-proxy-info --actimeleft --timeleft --file /tmp/x509up_u21686
+DEBUG 2025-02-23 19:36:14.940 UTC: 	 output : 338384
+338384
+
+ error: 
+ retcode : 0
+DEBUG 2025-02-23 19:36:14.940 UTC: 	 Proxy valid for 93:59:44 hours
+DEBUG 2025-02-23 19:36:14.940 UTC: 	 Encoded data for curl request: subresource=delegatedn
+DEBUG 2025-02-23 19:36:14.983 UTC: 	 Registering user credentials on myproxy for /DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod)-tw(01|02).cern.ch|/DC=ch/DC=cern/OU=computers/CN=crab-dev-tw(01|02|03|04).cern.ch|/DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=cmscrab/CN=(817881|373708)/CN=Robot: cms crab|/DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=crabint1/CN=373708/CN=Robot: CMS CRAB Integration 1
+DEBUG 2025-02-23 19:36:14.983 UTC: 	 Executing command :
+ voms-proxy-info --identity --file /tmp/x509up_u21686
+DEBUG 2025-02-23 19:36:15.393 UTC: 	 output : /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=jelee/CN=727784/CN=Jeongeun Lee
+
+ error: 
+ retcode : 0
+DEBUG 2025-02-23 19:36:15.393 UTC: 	 Getting myproxy life time left for f1f3941e9d4a8be26269c6d003b41f2827f63184
+DEBUG 2025-02-23 19:36:15.393 UTC: 	 Executing command :
+ myproxy-info -s myproxy.cern.ch -l f1f3941e9d4a8be26269c6d003b41f2827f63184
+DEBUG 2025-02-23 19:36:15.912 UTC: 	 output : username: f1f3941e9d4a8be26269c6d003b41f2827f63184
+owner: /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=jelee/CN=727784/CN=Jeongeun Lee
+  renewal policy: /DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod)-tw(01|02).cern.ch|/DC=ch/DC=cern/OU=computers/CN=crab-dev-tw(01|02|03|04).cern.ch|/DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=cmscrab/CN=(817881|373708)/CN=Robot: cms crab|/DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=crabint1/CN=373708/CN=Robot: CMS CRAB Integration 1
+  trusted retrieval policy: /DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod)-tw(01|02).cern.ch|/DC=ch/DC=cern/OU=computers/CN=crab-dev-tw(01|02|03|04).cern.ch|/DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=cmscrab/CN=(817881|373708)/CN=Robot: cms crab|/DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=crabint1/CN=373708/CN=Robot: CMS CRAB Integration 1
+  timeleft: 642:31:25  (26.8 days)
+
+ error: 
+ retcode : 0
+DEBUG 2025-02-23 19:36:15.912 UTC: 	 Myproxy is valid: 2313060
+DEBUG 2025-02-23 19:36:15.912 UTC: 	 Result of myproxy credential check:
+  Credential exists on myproxy: username: f1f3941e9d4a8be26269c6d003b41f2827f63184  - validity: 26 days, 18:31:00
+DEBUG 2025-02-23 19:36:15.912 UTC: 	 Command use: remake
+DEBUG 2025-02-23 19:36:15.912 UTC: 	 Options use: ['--task=250222_164810:jelee_crab_QCD_PT-170to300']
+DEBUG 2025-02-23 19:36:15.912 UTC: 	 Encoded data for curl request: subresource=version
+DEBUG 2025-02-23 19:36:15.944 UTC: 	 CRABClient version: v3.241125
+DEBUG 2025-02-23 19:36:15.944 UTC: 	 Instance is prod
+DEBUG 2025-02-23 19:36:15.944 UTC: 	 Server base url is cmsweb.cern.ch
+DEBUG 2025-02-23 19:36:15.944 UTC: 	 Command api workflow
+WARNING 2025-02-23 19:36:15.944 UTC: 	 ATTENTION return value for 'remake' has been changed to a dictionary
+ format is {'commandStatus': 'SUCCESS' or 'FAILED',
+            'workDir': name of the work directory created}
+INFO 2025-02-23 19:36:15.944 UTC: 	 Warning: crab_QCD_PT-170to300/.requestcache not created, because it already exists.
+INFO 2025-02-23 19:36:15.954 UTC: 	 Log file is /afs/cern.ch/work/j/jelee/nanoaod/workspace2025/CMSSW_13_3_0/src/PhysicsTools/NanoAODTools/crab_Run2_UL_Skim/2022preEE/QCD_PT-170to300/crab.log
