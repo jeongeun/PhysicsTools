@@ -1,50 +1,34 @@
-# Instruction for Skimming Run-3 NanoAOD using CRAB2
+# Instruction for Skimming NanoAOD (in Run-3) using CRAB3
 
 ### Environment set (lxplus8)
 
 ```
 ssh <user>@lxplus8.cern.ch
 
-
 export SCRAM_ARCH=el8_amd64_gcc11
-
 export VO_CMS_SW_DIR=/cvmfs/cms.cern.ch
-
 source $VO_CMS_SW_DIR/cmsset_default.sh
-
 voms-proxy-init --voms cms -valid 100:00 -rfc
-
 source /cvmfs/cms.cern.ch/common/crab-setup.sh
-
 ```
 ### Checkout instruction (CMSSW 13X)
 
 ```
 cmsrel CMSSW_13_0_13
-
 cd CMSSW_13_0_13/src
-
 cmsenv
 
 git clone https://github.com/jeongeun/PhysicsTools.git PhysicsTools/NanoAODTools
-
 #git clone https://github.com/cms-nanoAOD/nanoAOD-tools.git PhysicsTools/NanoAODTools
-
 scram b -j4
-
 ```
 
 #### Simple recipe (Run on LXPLUS8)
 
 ```
 cd PhysicsTools/NanoAODTools/crab
-
 python3 genCrabconfig.py InputDataset_2022.txt ./2022preEE
-
 cd 2022preEE/Muon_Run2022C/
-
-# Change the output site and directory in crab_cfg_Muon_Run2022C.py
-
 crab submit -c crab_cfg_Muon_Run2022C.py
 
 ```
@@ -92,7 +76,7 @@ The framework part of NanoAODTools is maintained as a CMSSW package, in PhysicsT
 Originally imported to CMSSW from [cms-nanoAOD/nanoAOD-tools](https://github.com/cms-nanoAOD/nanoAOD-tools) (post-processor functionality only).
 
 
-### 1. Listup your input dataset
+#### Listup your input dataset
 
 ```
 #2022 preEE rereco data, Muon and EGamma
@@ -135,33 +119,33 @@ das_client --query="dataset=/TWminusto4Q_TuneCP5_13p6TeV_powheg-pythia8/Run3Summ
 das_client --query="dataset=/QCD_PT-*_TuneCP5_13p6TeV_pythia8/Run3Summer22NanoAODv12*/NANOAODSIM" >> samples_22.txt
 ```
 
-### 2. final list
+#### Created dataset list:
 
 ```
-cat InputDataset_2022.txt
+ls PhysicsTools/NanoAODTool/crab/InputDataset_2022.txt
 ```
 
 
-### 2. define your skimming list :keep and drop branch
+#### Define your skimming list: keep and drop branch
 
 ```
-cat Run3_keep_and_drop.txt #2022 preEE
+ls PhysicsTools/NanoAODTool/crab/Run3_keep_and_drop.txt #2022 preEE
 ```
 
-### 3. make crab cfg files to skimming your input datasets
+#### To make crab cfg files to skimming your input datasets
 
 ```
 python3 genCrabconfig.py [Dataset List] [DirectoryName]
 ```
 
-### 4. crab submit (set proper output site in crab_cfg, T3_KR_KNU or KISTI as you want)
+#### Crab submit (set proper output site in crab_cfg, T3_KR_KNU or KISTI as you want)
 
 ```
 cd 2022preEE/SingleMuon_Run2022B
 crab submit -c crab_cfg_SingleMuon_Run2018B.py
 ```
 
-### 5. automatic crab submit and resubmit (if submitfailed)
+#### Automatic crab submit and resubmit (if submitfailed)
 
 ```
 # Automatic submit 
